@@ -1,6 +1,14 @@
 import { html, css, LitElement } from 'lit-element';
 
 export default class Square extends LitElement {
+
+  static get properties() {
+    return {
+      player: { type: String },
+      index: { type: Number }
+    }
+  }
+
   static get styles() {
     return css`
       .square {
@@ -26,7 +34,7 @@ export default class Square extends LitElement {
 
   render() {
     return html`
-      <button class="square"></button>
+      <button class="square" @click=${() => { this.player = 'X' } }>${this.player}</button>
     `;
   }
 }
