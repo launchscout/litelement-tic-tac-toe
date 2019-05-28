@@ -9,11 +9,6 @@ export default class Board extends LitElement {
     };
   }
 
-  constructor() {
-    super();
-    this.board = ['', '', ''];
-  }
-
   static get styles() {
     return css`
       :host {
@@ -23,10 +18,6 @@ export default class Board extends LitElement {
         width: 105px;
       }
     `;
-  }
-
-  handleClick(index) {
-    console.log(`clicked ${index}`);
   }
 
   render() {

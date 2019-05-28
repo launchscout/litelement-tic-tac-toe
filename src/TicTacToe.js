@@ -1,15 +1,9 @@
 import { html, css, LitElement } from 'lit-element';
 import { createStore } from 'wc-state-reducers';
+import move from './move';
 
 const reducers = {
-  move: ({ board, currentPlayer }, index) => {
-    console.log(board, currentPlayer, index);
-    const newBoard = [...board.slice(0, index), currentPlayer, ...board.slice(index+1)];
-    return Object.assign({}, {
-      board: newBoard,
-      currentPlayer: currentPlayer === 'X' ? 'O' : 'X'
-    });
-  }
+  move
 }
 
 export default class TicTacToe extends LitElement {
@@ -40,7 +34,7 @@ export default class TicTacToe extends LitElement {
   render() {
     return html`
       <tictactoe-board .board=${this.board}></tictactoe-board>
-      <tictactoe-game-info .gameInfo=${this.gameInfo}></tictactoe-game-info>
+      <div>${this.gameInfo}</div>
     `;
   }
 }
