@@ -1,6 +1,11 @@
 import { html, css, LitElement } from 'lit-element';
+import { dispatch } from 'wc-state-reducers';
 
 export default class Square extends LitElement {
+  
+  constructor() {
+    super();
+  }
 
   static get properties() {
     return {
@@ -32,9 +37,13 @@ export default class Square extends LitElement {
     `;
   }
 
+  handleClick(e) {
+    dispatch(this, 'move', this.index )
+  }
+
   render() {
     return html`
-      <button class="square" @click=${() => { this.player = 'X' } }>${this.player}</button>
+      <button class="square" @click=${(e) => { this.handleClick(e) } }>${this.player}</button>
     `;
   }
 }
