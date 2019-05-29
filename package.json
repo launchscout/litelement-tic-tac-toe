@@ -25,7 +25,7 @@
   "dependencies": {
     "lit-html": "^1.0.0",
     "lit-element": "^2.0.1",
-    "wc-state-reducers": "file:../wc-state-reducers"
+    "wc-state-reducers": "0.0.5"
   },
   "devDependencies": {
     "owc-dev-server": "^0.3.0",
